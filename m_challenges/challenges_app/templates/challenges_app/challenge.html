@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+    {% block css_files%}
+        <link rel="stylesheet" href="{% static "challenge/challenge_page.css" %}">
+        <link rel="stylesheet" href="{% static "challenge/includes/header.css" %}">
+    {%endblock%}
+{% block page_title%} Challenge
+
+    
+{% endblock%}
+{% block content%}
+    {% include "Challenges_app/includes/header.html" %}
+    <h1>{{month | title}} Challenges</h1>
+    {% if challenge_key is not None %}
+    <h2>{{ challenge_key}}</h2>
+    {% else %}
+    <h3>this month is not updated yet</h3>
+    {% endif %}
+{%endblock%}
+
+{% comment %} <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{month|title}} Challenge</title>
+</head>
+<body>
+    <h1>{{month | title}} Challenges</h1>
+    {% if challenge_key is not None %}
+    <h2>{{ challenge_key}}</h2>
+    {% else %}
+    <h3>this month is not updated yet</h3>
+    {% endif %}
+</body>
+</html> {% endcomment %}
